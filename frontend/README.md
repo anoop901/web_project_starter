@@ -97,11 +97,15 @@ Add a devserver script to `package.json`. This will let us run a devserver with
   ...
   "scripts": {
     ...
-    "devserver": "webpack-dev-server"
+    "devserver": "webpack-dev-server -d"
   },
   ...
 }
 ```
+
+The `-d` option causes the dev server to generate source maps, which let tools
+map logs and errors encountered when running the compiled bundle to the lines
+where they originated in the original source.
 
 If you're going to want to test this frontend with an API server, add the
 following to `webpack.config.js`:
